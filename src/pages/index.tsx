@@ -1,14 +1,17 @@
 import { trpc } from '@/utils/trpc'
+import { getOptionsForVote } from 'getRandomPokemon'
 import type { NextPage } from 'next'
 // import Head from 'next/head'
 // import Image from 'next/image'
 
 const Home: NextPage = () => {
-  const {data, isLoading} = trpc.useQuery(["hello", {text: "abhiram"}])
+  // const {data, isLoading} = trpc.useQuery(["hello", {text: "abhiram"}])
 
-  if (isLoading) return <div>Loading...</div>
+  // if (isLoading) return <div>Loading...</div>
 
-  if (data) return <div> {data.greeting}</div>
+  // if (data) return <div> {data.greeting}</div>
+
+  const [first, second] = getOptionsForVote()
 
   return (
     <div className="h-screen w-screen flex flex-col justify-center items-center">
@@ -16,9 +19,9 @@ const Home: NextPage = () => {
       <h1>Heyyyy !!! Added postCSS support and a global.css for background color and default text color!</h1>
       <div><h1 className="text-2xl text-center pb-4">Which Pokemon is Rounder?</h1></div>
       <div className="border rounded p-8 flex justify-between items-center max-w-2xl">
-        <div className="w-16 h-16 bg-red-200"></div>
+        <div className="w-16 h-16 bg-red-200">{first}</div>
         <h2 className="p-8">v/s</h2>
-        <div className="w-16 h-16 bg-red-200"></div>
+        <div className="w-16 h-16 bg-red-200">{second}</div>
         </div>
     </div>
   )

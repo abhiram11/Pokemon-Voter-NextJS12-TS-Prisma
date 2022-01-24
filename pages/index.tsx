@@ -6,6 +6,7 @@ const Home: NextPage = () => {
   return (
     <div>
       {/* <h1 className="text-2xl text-red-200">Hello</h1> */}
+      <h1>Heyyyy !!! Added postCSS support and a global.css for background color and default text color!</h1>
     </div>
   )
 }
